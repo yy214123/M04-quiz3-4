@@ -34,5 +34,5 @@ static size_t ilog2_v2(size_t i)
 }
 int ilog32_v3(uint32_t v)
 {
-    return (31 - __builtin_clz(v));
+    return (31 - __builtin_clz(v | 1));
 }
