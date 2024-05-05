@@ -17,3 +17,9 @@ int ceil_ilog2(uint32_t x)
     x >>= shift;
     return (r | shift | x > 1) + 1;       
 }
+
+int ceil_ilog2_v2(uint32_t x)
+{
+    x--;
+    return (32 - __builtin_clz(x | 1));
+}
